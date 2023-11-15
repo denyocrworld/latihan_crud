@@ -76,3 +76,5 @@ double get total {
 ```
 
 8. Tampilkan Total di bagian paling bawah halaman POSView
+
+<b>Jika tombol tambah dan kurang qty bekerja dan total terupdate, maka tugas ini selesai!</b>
