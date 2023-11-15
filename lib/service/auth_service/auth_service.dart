@@ -9,7 +9,7 @@ class AuthService {
   }) async {
     try {
       var response = await Dio().post(
-        "https://capekngoding.com/${uid}/api/auth/login",
+        "https://capekngoding.com/demo/api/auth/login",
         options: Options(
           headers: {
             "Content-Type": "application/json",
