@@ -3,6 +3,15 @@
 #### Lengkapi View dan Controller tiap module di project ini
 ----
 
+```
+git clone https://github.com/denyocrworld/latihan_crud
+cd latihan_crud
+dart pub get --verbose
+code .
+```
+----
+
+
 0. Buka file lib/env.dart
 Isi dulu semua datanya yaa! Wajib!
 
