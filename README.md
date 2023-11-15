@@ -74,3 +74,5 @@ double get total {
     return 0;
 }
 ```
+
+8. Tampilkan Total di bagian paling bawah halaman POSView
