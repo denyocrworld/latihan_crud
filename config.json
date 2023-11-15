@@ -1,0 +1,20 @@
+{
+    "modules": [
+        "main",
+        "auth/login",
+        "main_navigation",
+        "dashboard",
+        "product_list",
+        "product_form",
+        "customer_list",
+        "customer_form",
+        "pos",
+        "order_list",
+        "profile"
+    ],
+    "module_directory_name": "module",
+    "experimental_mode": false,
+    "learning_mode": false,
+    "unfreezed": true,
+    "use_cubit": false
+}
