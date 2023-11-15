@@ -1,87 +1,67 @@
-![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
 
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-Join%20Kelas%20Online-brightgreen.svg?logo=whatsapp&style=social)](https://wa.me/6282146727409?text=Hallo,%20saya%20ingin%20join%20kelas%20Online%20/w%20DenyOcr)
+### Instruksi
+#### Lengkapi View dan Controller tiap module di project ini
+----
 
+0. Buka file lib/env.dart
+Isi dulu semua datanya yaa! Wajib!
 
-# Hyper UI
-Hyper UI adalah kumpulan sampel ReuseableWidget Flutter yang bisa kamu gunakan untuk projectmu.
-Pada dasar-nya, Hyper UI dibuat dengan tujuan untuk edukasi.
-So, project ini dibuat sesederhana mungkin dan semudah mungkin untuk digunakan.
+1.  Buka LoginView dan LoginController isi sesuai instruksi
 
-## Architecture
-Architecture yang digunakan adalah MVC.
-Dimana state management-nya menggunakan StatefulWidget. 
+2.  Buka ProductListView, ProductListController isi sesuai instruksi
 
-Kami juga mengadopsi fitur contextless di Flutter.
-Dimana, kita akan meng-cache context kita di sebuah variabel.
-Kamu bisa mengakses-nya dimana saja:
+3.  Buka ProductFormView, ProductFormController isi sesuai instruksi
 
+<b>Jika Login sudah berhasil dan Create, Update dan Delete Product sudah berjalan maka test nomor 1-3 selesai</b>
+
+---
+
+4. Buat fitur yang sama di CustomerListView dan CustomerListController, CustomerFormView dan CustomerFormController gunakan CustomerService!
+Untuk datanya, cukup:
 ```
-Get.currentContext
+photo  (q_image_picker)
+customer_name (q_textfield)
+birth_date (q_date_picker)
+address (q_memofield)
 ```
 
-Mungkin terkait contextless ini masih sangat jarang yang menggunakannya. Padahal dengan menerapkan fitur contextless,
-Kita bisa mengurangi penggunaan context pada Aplikasi kita.
-Dan bisa menghindari keharusan untuk menambahkan BuildContext pada sebuah method.
+<b> JIka fitur Get, Create, Update dan Delete Customer bekerja maka tasks nomor 4 selesai</b>
 
-Contoh:
+---
+
+5. Tampilkan semua product di POSView (mirip dengan cara menampilkan product di ProductListView).
+Tampilkan dalam bentuk Cart, gunakan snippet:
 ```
-onButtonSaveClicK(BuildContext context) {
-    Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => DashboardView()),
-    );
+card2_cart1
+atau
+card2_cart2
+atau
+card2_cart3
+```
+
+6. Terapkan state management untuk menambahkan dan mengurangi qty, seperti di bawah ini dan terapkan di View(Nah kira2 di View perlu diterapkan seperti apa ya? Silahkan dicoba2)
+```
+increase(item) {
+    item["qty"] ??= 0;
+    item["qty"]++;
+    setState((){});
+}
+
+decrease(item) {
+    item["qty"] ??= 0;
+    if(item["qty"]==0) return;
+    item["qty"]--;
+    setState((){});
 }
 ```
 
-Kita cukup mengambil context dengan `Get.currentContext`:
+7. Buatlah getter sperti ini:
 ```
-onButtonSaveClicK() {
-    Navigator.push(
-        Get.currentContext,
-        MaterialPageRoute(builder: (context) => DashboardView()),
-    );
+double get total {
+    //Tambahkan kode untuk mendapatkan total products disini
+    // Clue 1: Gunakan for(var item in products)
+    // Clue 2: Tambahkan kode ini supaya ga error item["qty"] ??= 0;
+    // Clue 3: total = double.parse(item["qty"].toString()) * double.parse(item["price"].toString());
+    return 0;
 }
 ```
-
-Lebih baik lagi, kita bisa membuat custom navigation kita sendiri.
-```
-onButtonSaveClicK() {
-    Get.to(DashboardView());
-}
-```
-
-
-## Reuseable Widget
-Saat ini fokus utama kami adalah membuat Reuseable Widget terkait Form. Intinya kami ingin mempermudah pembuatan Form di Flutter, yang terkadang itu terlalu rumit jika dibandingkan dengan pembuatan Form di HTML misalnya.
-
-Dengan Hyper UI, kamu bisa membuat Form dengan lebih cepat dan mudah.
-Saat ini sudah tersedia:
-```
-QTextField
-QNumberField
-QMemoField
-QDatePicker
-QTimePicker
-QImagePicker
-
-QDropdown
-QCheckField
-QRadioField
-QSwitch
-QAutoComplete
-
-QImagePicker
-QRatingField
-QLocationPicker
-```
-<hr/>
-
-## Screenshots
-
-<img src="https://i.ibb.co/8m30PWv/1.png" style="width: 240px;"/><br/>
-<img src="https://i.ibb.co/NjqM6Cd/2.png" style="width: 240px;"/><br/>
-<img src="https://i.ibb.co/VmWGt9J/3.png" style="width: 240px;"/><br/>
-<hr/>
-
-* snippet update

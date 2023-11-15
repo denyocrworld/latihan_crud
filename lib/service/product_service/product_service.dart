@@ -1,9 +1,10 @@
 import 'package:hyper_ui/core.dart';
+import 'package:hyper_ui/env.dart';
 
 class ProductService {
   Future<List<Map<String, dynamic>>> get() async {
     final Dio dio = Dio();
-    final String url = 'https://capekngoding.com/demo/api/products';
+    final String url = 'https://capekngoding.com/${uid}/api/products';
 
     try {
       final response = await dio.get(
@@ -24,7 +25,7 @@ class ProductService {
 
   Future<Map<String, dynamic>> getById(int id) async {
     final Dio dio = Dio();
-    final String url = 'https://capekngoding.com/demo/api/products/$id';
+    final String url = 'https://capekngoding.com/${uid}/api/products/$id';
 
     try {
       final response = await dio.get(
@@ -67,7 +68,7 @@ class ProductService {
 
   Future<Map<String, dynamic>> update(int id, Map<String, dynamic> data) async {
     final Dio dio = Dio();
-    final String url = 'https://capekngoding.com/demo/api/products/$id';
+    final String url = 'https://capekngoding.com/${uid}/api/products/$id';
 
     try {
       final response = await dio.put(
@@ -89,7 +90,7 @@ class ProductService {
 
   Future<void> delete(int id) async {
     final Dio dio = Dio();
-    final String url = 'https://capekngoding.com/demo/api/products/$id';
+    final String url = 'https://capekngoding.com/${uid}/api/products/$id';
 
     try {
       await dio.delete(
@@ -109,7 +110,7 @@ class ProductService {
   Future<void> deleteAll() async {
     final Dio dio = Dio();
     final String url =
-        'https://capekngoding.com/demo/api/products/action/delete-all';
+        'https://capekngoding.com/${uid}/api/products/action/delete-all';
 
     try {
       await dio.delete(

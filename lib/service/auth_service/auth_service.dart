@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:hyper_ui/env.dart';
 
 class AuthService {
   static String? token;
@@ -8,7 +9,7 @@ class AuthService {
   }) async {
     try {
       var response = await Dio().post(
-        "https://capekngoding.com/demo/api/auth/login",
+        "https://capekngoding.com/${uid}/api/auth/login",
         options: Options(
           headers: {
             "Content-Type": "application/json",

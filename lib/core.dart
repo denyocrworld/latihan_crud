@@ -6,6 +6,7 @@ it means you have to rename it to something more unique.
 export 'package:hyper_ui/config.dart';
 export 'package:hyper_ui/core_package.dart';
 export 'package:hyper_ui/demo.dart';
+export 'package:hyper_ui/env.dart';
 export 'package:hyper_ui/module/auth/login/controller/login_controller.dart';
 export 'package:hyper_ui/module/auth/login/view/login_view.dart';
 export 'package:hyper_ui/module/customer_form/controller/customer_form_controller.dart';

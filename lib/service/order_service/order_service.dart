@@ -1,9 +1,10 @@
 import 'package:hyper_ui/core.dart';
+import 'package:hyper_ui/env.dart';
 
 class OrderService {
   Future<List<Map<String, dynamic>>> get() async {
     final Dio dio = Dio();
-    final String url = 'https://capekngoding.com/demo/api/orders';
+    final String url = 'https://capekngoding.com/${uid}/api/orders';
 
     try {
       final response = await dio.get(
@@ -61,7 +62,7 @@ class OrderService {
   Future<void> deleteAll() async {
     final Dio dio = Dio();
     final String url =
-        'https://capekngoding.com/demo/api/orders/action/delete-all';
+        'https://capekngoding.com/${uid}/api/orders/action/delete-all';
 
     try {
       await dio.delete(
