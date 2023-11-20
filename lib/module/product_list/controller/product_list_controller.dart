@@ -30,7 +30,7 @@ class ProductListController extends State<ProductListView> {
     Buat method getProducts() async
     Isi dengan kode berikut:
     -----
-    products = await ProductService().getProducts();
+    products = await ProductService().get();
     setState((){});
     -----
     */
